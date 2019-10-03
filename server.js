@@ -16,15 +16,24 @@ const complements = [
   "You've learned a lot of things, and that's pretty hard to do"
 ];
 
+const insults = [
+  "You look nice, do you?",
+  "You work out?"
+];
+
 app.get('/', function(req,res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/complement', function(req,res) {
-  res.json({ complement: random(complements) }).end();
+  res.json({ complement: pickOne(complements) }).end();
 });
 
-function random(arr) {
+app.get('/insult', function(req,res) {
+  res.json({ insult: pickOne(insults) }).end();
+});
+
+function pickOne(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
