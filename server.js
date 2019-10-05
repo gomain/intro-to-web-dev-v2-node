@@ -22,7 +22,7 @@ const insults = [
 ];
 
 app.get('/', function(req,res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname,'public/index.html'));
 });
 
 app.get('/complement', function(req,res) {
@@ -38,7 +38,7 @@ function pickOne(arr) {
   return arr[randomIndex];
 }
 
-app.use('/public', express.static('./public'));
+app.use('/public', express.static(path.join(__dirname,'public')));
 
 const port = 3000;
 console.log(`listening on http;//localhost:${port}`);
