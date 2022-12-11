@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/gomain/intro-to-web-dev-v2-node#readme",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.3"
   },
   "devDependencies": {
     "concurrently": "4.1.2",
